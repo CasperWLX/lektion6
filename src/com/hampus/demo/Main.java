@@ -6,20 +6,24 @@ public class Main
 {
     public static void main(String[] args)
     {
-        int[] numbers = {0, 100, 1000};
+        int[] listOfNumbers = {10, 20, 30, 40, 50};
+        divisionByZero(23);
 
+        for(int i = 0; i < listOfNumbers.length; i++)
+        {
+            System.out.println(listOfNumbers[i] + listOfNumbers[i]);
+        }
+    }
 
+    public static void divisionByZero(int i)
+    {
         try
         {
-            for (int i = 0; i < numbers.length; i++)
-            {
-                System.out.println(numbers[i] - numbers[i+1]);
-            }
+            System.out.println(i / 0);
         }
-        catch (ArrayIndexOutOfBoundsException aioobe)
+        catch(ArithmeticException ae)
         {
-            System.out.println("Listan är slut");
-            aioobe.printStackTrace();
+            System.out.println("Nope can't divide that");
         }
     }
 }
