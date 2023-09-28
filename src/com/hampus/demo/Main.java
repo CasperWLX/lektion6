@@ -1,29 +1,30 @@
 package com.hampus.demo;
 
-import java.util.Scanner;
+import com.hampus.demo.modules.Student;
 
 public class Main
 {
     public static void main(String[] args)
     {
-        int[] listOfNumbers = {10, 20, 30, 40, 50};
-        divisionByZero(23);
 
-        for(int i = 0; i < listOfNumbers.length; i++)
-        {
-            System.out.println(listOfNumbers[i] + listOfNumbers[i]);
-        }
+        /* TODO
+         *   Change the names of files + packages to relevant names
+         *   Find the errors in the code and resolve it!
+         */
+
+        //Jag antar att det blir lite fri tolkning för vissa saker här men allt funkar nu
+        Student student = new Student(23,"Hampus");
+
+        student.sayHello("Källberg");
+        System.out.println(student.DoubleMyAge());
+        runMyForLoop();
     }
 
-    public static void divisionByZero(int i)
+    public static void runMyForLoop()
     {
-        try
+        for(int i = 0; i < 5; i++)
         {
-            System.out.println(i / 0);
-        }
-        catch(ArithmeticException ae)
-        {
-            System.out.println("Nope can't divide that");
+            System.out.println("Inside the method runMyForLoop" + i);
         }
     }
 }
